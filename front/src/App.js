@@ -22,7 +22,7 @@ function App() {
     };
 
     await axios
-      .post("http://127.0.0.1:5000/api/create_payment", data)
+      .post("https://stripe-back-wdoq.onrender.com/api/create_payment", data)
       .then((resp) => {
 
         window.location.replace(resp.data.payurl);
@@ -33,7 +33,7 @@ function App() {
   };
 
   useEffect(() => {
-    axios.get("http://127.0.0.1:5000/api/getallcoupons").then((resp) => {
+    axios.get("https://stripe-back-wdoq.onrender.com/api/getallcoupons").then((resp) => {
       setdisclist(resp.data.data);
     });
   }, []);
